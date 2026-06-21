@@ -1,0 +1,30 @@
+CORRECAO DO ERRO: Cannot find module 'express'
+===============================================
+
+Esse erro acontece quando o servidor foi iniciado sem instalar as dependencias Node.js.
+
+OPCAO MAIS FACIL:
+1. Clique duas vezes em INSTALAR_DEPENDENCIAS.bat
+2. Depois clique duas vezes em INICIAR_SERVIDOR.bat
+
+OPCAO PELO TERMINAL:
+Abra o CMD dentro desta pasta e execute:
+
+npm install
+npm start
+
+Se estiver usando PowerShell/CMD, entre primeiro na pasta correta:
+
+cd /d "C:\xampp\htdocs\04- AGRINHO\03- SISTEMA FERTILIZANTE BIOLOGICO\v4"
+npm install
+npm start
+
+IMPORTANTE:
+A pasta precisa conter estes arquivos:
+- package.json
+- server.js
+- index.html
+- style.css
+- script.js
+
+Se package.json nao estiver na pasta, extraia novamente o ZIP completo.

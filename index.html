@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111d">
+  <title>Painel de Automação Industrial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="title-block">
+        <p class="eyebrow">SISTEMA SUPERVISÓRIO</p>
+        <h1>Painel de Automação Industrial</h1>
+      </div>
+
+      <div class="system-actions">
+        <div class="system-status" id="serialStatusBox">
+          <span class="system-led disconnected" id="connectionLed" aria-hidden="true"></span>
+          <div>
+            <small>Arduino / Servidor Serial</small>
+            <strong id="connectionStatus">DESCONECTADO</strong>
+          </div>
+        </div>
+        <button id="connectArduino" class="serial-button" type="button">
+          <span class="button-icon">⎋</span>
+          CONECTAR ARDUINO
+        </button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="summary">
+        <div class="summary-card">
+          <div class="summary-icon pump-symbol" aria-hidden="true"></div>
+          <div>
+            <span>Bombas ligadas</span>
+            <strong id="activeCount">0 / 3</strong>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon clock-symbol" aria-hidden="true"></div>
+          <div>
+            <span>Horário do sistema</span>
+            <strong id="systemClock">--:--:--</strong>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon gear-symbol" aria-hidden="true">⚙</div>
+          <div>
+            <span>Modo de operação</span>
+            <strong>AUTOMAÇÃO LOCAL COM ARDUINO</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="pump-grid" aria-label="Controle das bombas de circulação">
+        <article class="pump-card" data-pump="1">
+          <div class="pump-header">
+            <h2>Bomba de Circulação 01</h2>
+            <span class="pump-code">BC-01</span>
+          </div>
+
+          <div class="pump-body-zone">
+            <div class="pump-visual" aria-hidden="true">
+              <div class="pipe elbow"></div>
+              <div class="pump-icon">
+                <div class="motor-block"></div>
+                <div class="pump-body">
+                  <div class="rotor"></div>
+                </div>
+                <div class="pump-base"></div>
+              </div>
+              <div class="pipe pipe-horizontal"></div>
+            </div>
+
+            <div class="display-stack">
+              <span class="status-badge">DESLIGADA</span>
+              <div class="virtual-display" aria-live="polite">
+                <div class="display-row">
+                  <span>ESTADO</span>
+                  <strong class="display-state">PARADA</strong>
+                </div>
+                <div class="display-row">
+                  <span>HORÁRIO</span>
+                  <strong class="display-clock">--:--:--</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-area">
+            <button class="push-button" type="button" aria-pressed="false">
+              <span class="button-cap"></span>
+              <span class="button-label">LIGAR / DESLIGAR</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="pump-card" data-pump="2">
+          <div class="pump-header">
+            <h2>Bomba de Circulação 02</h2>
+            <span class="pump-code">BC-02</span>
+          </div>
+
+          <div class="pump-body-zone">
+            <div class="pump-visual" aria-hidden="true">
+              <div class="pipe elbow"></div>
+              <div class="pump-icon">
+                <div class="motor-block"></div>
+                <div class="pump-body">
+                  <div class="rotor"></div>
+                </div>
+                <div class="pump-base"></div>
+              </div>
+              <div class="pipe pipe-horizontal"></div>
+            </div>
+
+            <div class="display-stack">
+              <span class="status-badge">DESLIGADA</span>
+              <div class="virtual-display" aria-live="polite">
+                <div class="display-row">
+                  <span>ESTADO</span>
+                  <strong class="display-state">PARADA</strong>
+                </div>
+                <div class="display-row">
+                  <span>HORÁRIO</span>
+                  <strong class="display-clock">--:--:--</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-area">
+            <button class="push-button" type="button" aria-pressed="false">
+              <span class="button-cap"></span>
+              <span class="button-label">LIGAR / DESLIGAR</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="pump-card" data-pump="3">
+          <div class="pump-header">
+            <h2>Bomba de Circulação 03</h2>
+            <span class="pump-code">BC-03</span>
+          </div>
+
+          <div class="pump-body-zone">
+            <div class="pump-visual" aria-hidden="true">
+              <div class="pipe elbow"></div>
+              <div class="pump-icon">
+                <div class="motor-block"></div>
+                <div class="pump-body">
+                  <div class="rotor"></div>
+                </div>
+                <div class="pump-base"></div>
+              </div>
+              <div class="pipe pipe-horizontal"></div>
+            </div>
+
+            <div class="display-stack">
+              <span class="status-badge">DESLIGADA</span>
+              <div class="virtual-display" aria-live="polite">
+                <div class="display-row">
+                  <span>ESTADO</span>
+                  <strong class="display-state">PARADA</strong>
+                </div>
+                <div class="display-row">
+                  <span>HORÁRIO</span>
+                  <strong class="display-clock">--:--:--</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-area">
+            <button class="push-button" type="button" aria-pressed="false">
+              <span class="button-cap"></span>
+              <span class="button-label">LIGAR / DESLIGAR</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="bottom-row">
+        <div class="serial-log-panel">
+          <div class="serial-icon" aria-hidden="true">›_</div>
+          <div>
+            <strong>Comunicação serial</strong>
+            <span id="serialMessage">Aguardando conexão com o Arduino Uno R3.</span>
+          </div>
+          <button id="turnOffAll" class="serial-button secondary" type="button">
+            <span class="power-icon">⏻</span>
+            DESLIGAR TUDO
+          </button>
+        </div>
+
+        <aside class="brand-panel" aria-label="Logotipos do projeto">
+          <img src="assets/logo-agrinho.png" alt="Concurso Agrinho">
+          <span class="brand-divider"></span>
+          <img src="assets/logo-mendes.png" alt="Colégio Estadual Mendes Gonçalves">
+          <span class="brand-divider"></span>
+          <img src="assets/logo-desenvolvimento-sistemas.png" alt="Técnico em Desenvolvimento de Sistemas">
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <span>Controle via celular + servidor local</span>
+      <span>PC servidor • Arduino Uno R3 • 3 Relés</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
